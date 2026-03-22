@@ -1,0 +1,17 @@
+/* BASE */
+@use "base/reset" as *;
+
+/* LAYOUT */
+@use "layout/header-footer" as *;
+@use "layout/mq-desktop" as *;
+@use "layout/mq-tablet" as *;
+
+/* PAGES */
+@use "pages/home" as *;
+@use "pages/proyectos" as *;
+@use "pages/contacto" as *;
+
+/* UTILITIES */
+@use "utilities/variables" as *;
+@use "utilities/mixin" as *;
+@use "utilities/animations" as *;

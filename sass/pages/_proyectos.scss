@@ -1,0 +1,124 @@
+// VARIABLES Y MIXINS CON NAMESPACE
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+/* ================= INTRO PROYECTOS ================= */
+.intro-proyectos {
+  text-align: center;
+  padding: v.$gap-section;
+  background: v.$color-light;
+}
+
+.intro-proyectos p {
+  max-width: 600px;
+  margin: auto;
+  color: v.$color-text-primary;
+}
+
+/* ================= CARRUSEL ================= */
+.proyectos-destacados {
+  padding: 50px 80px;
+  background: v.$color-white;
+}
+
+#carouselProyectos {
+  max-width: 900px;
+  margin: auto;
+}
+
+#carouselProyectos img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: v.$radius-medium;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: v.$overlay-dark;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.carousel-indicators button {
+  background-color: v.$color-text-primary;
+}
+
+/* ================= CATEGORIA PROYECTOS ================= */
+.categoria-proyectos {
+  padding: v.$gap-section;
+  background: v.$color-light;
+}
+
+.categoria-proyectos h2 {
+  text-align: center;
+  margin-bottom: v.$gap-grid;
+}
+
+/* ================= GRID PROYECTOS ================= */
+.grid-proyectos {
+  @include m.grid(3, v.$gap-grid); // CORREGIDO: grid-columns → grid
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ================= CARD PROYECTO ================= */
+.card-proyecto {
+  text-align: center;
+  padding: 25px;
+  background: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-medium;
+  transition: all 0.3s ease;
+}
+
+.card-proyecto img {
+  width: 100%;
+  max-width: 240px;
+  margin: auto;
+  display: block;
+  border-radius: v.$radius-small;
+}
+
+.card-proyecto h3 {
+  margin-top: 15px;
+}
+
+.card-proyecto p {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.card-proyecto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px v.$shadow-soft;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: v.$break-desktop) {
+  .grid-proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #carouselProyectos img {
+    height: auto;
+  }
+}
+
+@media (max-width: v.$break-tablet) {
+  .intro-proyectos {
+    padding: v.$gap-section-sm;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+
+  .proyectos-destacados {
+    padding: 40px 20px;
+  }
+
+  #carouselProyectos img {
+    height: auto;
+  }
+}

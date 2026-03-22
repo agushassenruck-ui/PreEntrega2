@@ -1,0 +1,86 @@
+/* ===================================================
+   MIXINS SIN PARAMETROS
+=================================================== */
+
+// Flex centrado (ahora con dirección y gap opcional)
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+// Flex space-between (header)
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Transición estándar del proyecto
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+
+/* ===================================================
+   MIXINS CON PARAMETROS
+=================================================== */
+
+// Grid reutilizable (proyectos, grids)
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Padding de secciones
+@mixin section-padding($padding) {
+  padding: $padding;
+}
+
+// Botón base configurable
+@mixin button-base($padding, $borderColor) {
+  display: inline-block;
+  padding: $padding;
+  border: 1px solid $borderColor;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* ===================================================
+   MIXINS OPCIONALES
+=================================================== */
+
+// Sombra usada en cards hover
+@mixin shadow($color: rgba(0,0,0,0.06)) {
+  box-shadow: 0 6px 16px $color;
+}
+
+// Contenedor centrado
+@mixin container($width: 1000px) {
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ===================================================
+   MEDIA QUERIES (RESPONSIVE)
+   ⚠️ NECESARIOS PARA QUE COMPILE
+=================================================== */
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

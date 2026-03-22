@@ -1,0 +1,64 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+/* =========================================
+   DESKTOP BREAKPOINT
+========================================= */
+
+@include m.desktop {
+
+  /* ---------- GLOBAL LAYOUT ---------- */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    padding: v.$gap-grid v.$gap-section; // Reemplazado $space-lg y $space-xxl
+  }
+
+  nav ul {
+    gap: v.$gap-section-sm; // Reemplazado $space-xl
+  }
+
+  /* ---------- HERO (HOME) ---------- */
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: v.$gap-section; // Reemplazado $space-xxl
+    padding: v.$gap-section; // Reemplazado $space-xxl
+  }
+
+  .hero-texto {
+    max-width: 450px;
+  }
+
+  /* ---------- PROYECTOS HOME ---------- */
+  .proyectos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$gap-section-sm; // Reemplazado $space-xl
+  }
+
+  /* ---------- GRID PROYECTOS PAGE ---------- */
+  .grid-proyectos {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* ---------- CONTACTO ---------- */
+  .info-contacto {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    grid-template-columns: 1fr 1fr;
+    padding: v.$gap-section-sm v.$gap-section; // Reemplazado $space-xl y $space-xxl
+  }
+
+  .footer-menu {
+    justify-content: flex-end;
+  }
+
+}

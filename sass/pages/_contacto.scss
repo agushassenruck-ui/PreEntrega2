@@ -1,0 +1,74 @@
+// VARIABLES Y MIXINS CON NAMESPACE
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+/* ================= HERO CONTACTO ================= */
+.hero-contacto {
+  text-align: center;
+  padding: v.$gap-section;
+  background: v.$color-light;
+}
+
+.hero-contacto h1 {
+  margin-bottom: 10px;
+}
+
+/* ================= INFO CONTACTO ================= */
+.info-contacto {
+  @include m.grid(3, v.$gap-grid); // CORREGIDO: grid-columns → grid
+  text-align: center;
+  padding: 40px;
+  background: v.$color-white;
+}
+
+.info-item p:first-child {
+  font-weight: bold;
+}
+
+/* ================= SECCIÓN CONTACTO ================= */
+.seccion-contacto {
+  padding: v.$gap-section;
+  background: v.$color-light;
+  text-align: center;
+}
+
+/* ================= FORMULARIO ================= */
+.formulario {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* ================= BANNER ================= */
+.banner-imagen img {
+  width: 100%;
+  display: block;
+  border-radius: v.$radius-medium;
+}
+
+/* ================= CTA CONTACTO ================= */
+.cta-contacto {
+  text-align: center;
+  padding: v.$gap-section;
+  background: v.$color-white;
+}
+
+.cta-contacto p {
+  max-width: 600px;
+  margin: 20px auto;
+  color: v.$color-text-primary;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: v.$break-desktop) {
+  .info-contacto {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: v.$break-tablet) {
+  .hero-contacto,
+  .seccion-contacto,
+  .cta-contacto {
+    padding: v.$gap-section-sm;
+  }
+}

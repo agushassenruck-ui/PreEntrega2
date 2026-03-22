@@ -1,0 +1,56 @@
+/* ================= COLORES ================= */
+
+// Backgrounds
+$color-white: #ffffff;
+$color-light: #f5f5f5;
+
+// Texto
+$color-text-primary: #333;
+$color-text-secondary: #555;
+$color-heading: #222;
+
+// Areas 
+$color-header: #1d1d1d;
+$color-footer: #2e2e2e;
+
+// Bordes
+$color-border: #eee;
+
+// Botones
+$color-btn: #333;
+$color-btn-hover: #333;
+$color-btn-text-hover: #ffffff;
+
+// Links hover
+$color-link-hover: #555;
+
+// Efectos y sombras
+$shadow-soft: rgba(0, 0, 0, 0.06);
+$overlay-dark: rgba(0, 0, 0, 0.4);
+
+
+/* ================= BORDES RADIUS ================= */
+$radius-small: 4px;
+$radius-medium: 6px;
+$radius-large: 12px;
+
+
+/* ================= SPACING / GAPS ================= */
+$gap-section: 80px;
+$gap-section-sm: 60px;
+$gap-grid: 40px;
+
+
+/* ================= TIPOGRAFIA ================= */
+$font-principal: Arial, Helvetica, sans-serif;
+
+$h1-size: 42px;
+$h2-size: 32px;
+$h3-size: 20px;
+
+$line-height-base: 1.6;
+
+
+/* ================= MEDIA BREAKPOINTS ================= */
+$break-desktop: 1024px;
+$break-tablet: 768px;

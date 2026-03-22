@@ -1,0 +1,87 @@
+// utilities/_animations.scss
+
+// ======================
+// KEYFRAMES
+// ======================
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0.7; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+// ======================
+// CLASES DE ANIMACIÓN
+// ======================
+
+// Botón con hover simple
+.btn-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: darken(#3498db, 10%);
+  }
+}
+
+// Imagen con efecto hover
+.img-hover {
+  transition: transform 0.3s ease;
+  display: block;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Fade-in al cargar la sección
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+// Fade-in desde la izquierda
+.fade-left {
+  opacity: 0;
+  animation: fadeInLeft 0.6s forwards;
+}
+
+// Fade-in desde la derecha
+.fade-right {
+  opacity: 0;
+  animation: fadeInRight 0.6s forwards;
+}
+
+// Escalado suave (pulse) para elementos que quieras destacar
+.pulse {
+  display: inline-block;
+  animation: pulse 1.2s infinite;
+}
+
+// Escalado al aparecer
+.scale-up {
+  opacity: 0;
+  animation: scaleUp 0.6s forwards;
+}

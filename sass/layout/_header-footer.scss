@@ -1,0 +1,130 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: v.$color-header;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.logo img {
+  width: 70px;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+nav ul {
+  @include m.flex-center(row, 30px);
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: v.$color-white;
+  font-weight: 500;
+  @include m.transition;
+}
+
+nav a:hover {
+  color: v.$color-link-hover;
+  cursor: pointer;
+}
+
+
+/* ================= FOOTER ================= */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 80px;
+  background: v.$color-footer;
+  border-top: 1px solid v.$color-border;
+}
+
+footer,
+footer * {
+  color: v.$color-white !important;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-left img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.footer-redes img {
+  width: 22px;
+  margin-right: 12px;
+  opacity: 0.8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footer-redes img:hover {
+  opacity: 1;
+}
+
+.footer-contacto {
+  font-size: 14px;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-menu a {
+  color: v.$color-white !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+  color: v.$color-white !important;
+  cursor: pointer;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: v.$break-desktop) {
+  footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-menu {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: v.$break-tablet) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  nav ul {
+    @include m.flex-center(column, 10px);
+  }
+
+  footer {
+    padding: 40px 25px;
+  }
+}

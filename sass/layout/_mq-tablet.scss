@@ -1,0 +1,48 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+/* =========================================
+   TABLET BREAKPOINT
+========================================= */
+
+@include m.tablet {
+
+  /* ---------- GLOBAL TYPOGRAPHY ---------- */
+  body {
+    font-size: v.$font-principal; // CORREGIDO: $font-primary → $font-principal
+  }
+
+  /* ---------- CONTAINER ---------- */
+  .container {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    padding: v.$gap-section-sm 0; // CORRECTO
+  }
+
+  .navbar ul {
+    gap: v.$gap-grid; // CORRECTO
+  }
+
+  /* ---------- HOME ---------- */
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* ---------- PROYECTOS ---------- */
+  .grid-proyectos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$gap-grid; // CORRECTO
+  }
+
+  /* ---------- CONTACTO ---------- */
+  .contacto-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+}
